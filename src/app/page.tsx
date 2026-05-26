@@ -3,17 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Github,
-  Linkedin,
   Mail,
   MapPin,
   ExternalLink,
   Menu,
   X,
-  Code2,
-  GraduationCap,
-  Briefcase,
-  Rocket,
+  Globe,
+  Users,
+  CalendarCheck,
+  Sparkles,
 } from "lucide-react";
 const skills = [
   "Next.js", "React", "TypeScript", "Node.js",
@@ -23,17 +21,17 @@ const skills = [
 
 const sobre = [
   {
-    icon: GraduationCap,
+    icon: Users,
     title: "Formação",
     desc: "Estudante na Universidade da Madeira, a aprofundar conhecimentos em engenharia de software e tecnologias modernas.",
   },
   {
-    icon: Briefcase,
+    icon: CalendarCheck,
     title: "Experiência",
     desc: "Trainee Software Developer na Alberto Oculista, onde aplico os meus conhecimentos em ambiente profissional real.",
   },
   {
-    icon: Rocket,
+    icon: Sparkles,
     title: "Objetivos",
     desc: "Focado em crescer como developer, contribuir para projetos com impacto real e explorar as possibilidades da IA e automação.",
   },
@@ -204,31 +202,19 @@ export default function Portfolio() {
                 className="mt-8 flex justify-center gap-3 md:justify-start"
               >
                 {[
-                  {
-                    href: "https://github.com/Leandr0xX",
-                    icon: Github,
-                    label: "GitHub",
-                  },
-                  {
-                    href: "https://www.linkedin.com/in/leandrogama23/",
-                    icon: Linkedin,
-                    label: "LinkedIn",
-                  },
-                  {
-                    href: "mailto:leandrogama1508@gmail.com",
-                    icon: Mail,
-                    label: "Email",
-                  },
-                ].map(({ href, icon: Icon, label }) => (
+                  { href: "https://github.com/Leandr0xX", label: "GitHub" },
+                  { href: "https://www.linkedin.com/in/leandrogama23/", label: "LinkedIn" },
+                  { href: "mailto:leandrogama1508@gmail.com", label: "Email" },
+                ].map(({ href, label }) => (
                   <a
                     key={label}
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    aria-label={label}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-zinc-400 transition hover:border-yellow-400/50 hover:text-yellow-400"
+                    aria-label={label}
                   >
-                    <Icon size={18} />
+                    <ExternalLink size={16} />
                   </a>
                 ))}
               </motion.div>
@@ -361,7 +347,7 @@ export default function Portfolio() {
               >
                 <div className="flex items-start justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-yellow-400/20 bg-yellow-400/10 text-yellow-400">
-                    <Code2 size={22} />
+                    <Globe size={22} />
                   </div>
                   {project.live && (
                     <span className="flex items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs text-green-400">
@@ -392,7 +378,7 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 rounded-lg border border-white/10 px-4 py-2 text-xs font-medium text-zinc-400 transition hover:border-white/30 hover:text-white"
                   >
-                    <Github size={13} />
+                    <ExternalLink size={13} />
                     GitHub
                   </a>
                   <a
@@ -457,7 +443,7 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl border border-white/20 px-5 py-2.5 text-sm text-zinc-400 transition hover:border-white/40 hover:text-white"
               >
-                <Github size={15} />
+                <ExternalLink size={15} />
                 GitHub
               </a>
               <a
@@ -466,7 +452,7 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl border border-white/20 px-5 py-2.5 text-sm text-zinc-400 transition hover:border-white/40 hover:text-white"
               >
-                <Linkedin size={15} />
+                <ExternalLink size={15} />
                 LinkedIn
               </a>
             </div>
